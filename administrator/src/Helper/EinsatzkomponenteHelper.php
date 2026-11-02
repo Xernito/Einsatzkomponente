@@ -369,7 +369,7 @@ $gmap ='function initialize() {
   }
 
   var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-  var image = "'.Uri::base().$marker2_image.'";
+  var image = "'.Uri::root().$marker2_image.'";
   var myLatlng = new google.maps.LatLng("'.$marker2_lat.'","'.$marker2_lng.'");
   var marker2Marker = new google.maps.Marker({
       position: myLatlng,
@@ -385,9 +385,9 @@ $gmap ='function initialize() {
   });
 google.maps.event.addListener(map, "click", function() { infowindow_marker2.close(); });
   
-  var image = "'.Uri::base().$marker1_image.'";
+  var image = "'.Uri::root().$marker1_image.'";
 	var image = {
-    url: "'.Uri::base().$marker1_image.'",
+    url: "'.Uri::root().$marker1_image.'",
     scaledSize: new google.maps.Size('.$params->get('einsatzkarte_gmap_icon', 14).','.$params->get('einsatzkarte_gmap_icon', 14).') 
     };
   var myLatLng = new google.maps.LatLng("'.$marker1_lat.'","'.$marker1_lng.'");
@@ -447,7 +447,7 @@ function setMarkers(map, locations) {
     var orgas = locations[i];
     var myLatLng = new google.maps.LatLng(orgas[1], orgas[2]);
 	var image = {
-    url: "'.Uri::base().'"+orgas[4],
+    url: "'.Uri::root().'"+orgas[4],
     scaledSize: new google.maps.Size('.$params->get('einsatzkarte_gmap_icon_orga', 24).','.$params->get('einsatzkarte_gmap_icon_orga', 24).') 
     };
 
@@ -468,7 +468,7 @@ function setMarkerz(map, locations) {
     var einsatzorte = locations[i];
     var myLatLng = new google.maps.LatLng(einsatzorte[1], einsatzorte[2]);
 	var image = {
-    url: "'.Uri::base().'"+einsatzorte[4],
+    url: "'.Uri::root().'"+einsatzorte[4],
     scaledSize: new google.maps.Size('.$params->get('einsatzkarte_gmap_icon', 8).','.$params->get('einsatzkarte_gmap_icon', 8).') 
     };
 
@@ -551,7 +551,7 @@ jumpTo(lon,lat,zoom);
 
 // Benutzte Marker Icons hinzufügen..
 icons = new Array();
-icons[4] = new Array("'.Uri::base().$marker1_image.'","'.$params->get('einsatzkarte_gmap_icon', 24).'","'.$params->get('einsatzkarte_gmap_icon', 24).'","0","1");
+icons[4] = new Array("'.Uri::root().$marker1_image.'","'.$params->get('einsatzkarte_gmap_icon', 24).'","'.$params->get('einsatzkarte_gmap_icon', 24).'","0","1");
 
 
 // Marker hinzufügen
@@ -563,7 +563,7 @@ setMarkers(map, orgas);
 function setMarkers(map, locations) {
    for (var i = 0; i < locations.length; i++) {
      var orgas = locations[i];
-	icons[i] = new Array("'.Uri::base().'"+orgas[4],"'.$params->get('einsatzkarte_gmap_icon_orga', 24).'","'.$params->get('einsatzkarte_gmap_icon_orga', 24).'","0","1");
+	icons[i] = new Array("'.Uri::root().'"+orgas[4],"'.$params->get('einsatzkarte_gmap_icon_orga', 24).'","'.$params->get('einsatzkarte_gmap_icon_orga', 24).'","0","1");
 	 addMarker(layer_standort,orgas[2],orgas[1],orgas[0],false,i);
   } }
 
@@ -572,7 +572,7 @@ setMarkerz(map, einsatzorte);
 function setMarkerz(map, locations) {
    for (var i = 0; i < locations.length; i++) {
      var einsatzorte = locations[i];
-	icons[i] = new Array("'.Uri::base().'"+einsatzorte[4],"'.$params->get('einsatzkarte_gmap_icon', 8).'","'.$params->get('einsatzkarte_gmap_icon', 8).'","0","1");
+	icons[i] = new Array("'.Uri::root().'"+einsatzorte[4],"'.$params->get('einsatzkarte_gmap_icon', 8).'","'.$params->get('einsatzkarte_gmap_icon', 8).'","0","1");
 	 addMarker(layer_standort,einsatzorte[2],einsatzorte[1],einsatzorte[0],false,i);
   } }
   

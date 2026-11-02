@@ -254,12 +254,12 @@ $params = ComponentHelper::getParams('com_einsatzkomponente');
 			
 			if ($gmap == '1')
 			{
-			echo '<td align="center" nowrap="nowrap"><img src="../administrator/media/com_einsatzkomponente/admin/images/ok.png" width="24" height="24" /></td>';
+			echo '<td align="center" nowrap="nowrap"><img src="'.\Joomla\CMS\Uri\Uri::root(true).'/media/com_einsatzkomponente/admin/images/ok.png" width="24" height="24" /></td>';
 			}
             
             if ($gmap == '0')
             {
-			echo '<td align="center" nowrap="nowrap"><img src="../administrator/media/com_einsatzkomponente/admin/images/error.png" width="24" height="24" /></td>';
+			echo '<td align="center" nowrap="nowrap"><img src="'.\Joomla\CMS\Uri\Uri::root(true).'/media/com_einsatzkomponente/admin/images/error.png" width="24" height="24" /></td>';
 			}
 			?>
  				<?php  endif; ?>
@@ -277,18 +277,18 @@ $params = ComponentHelper::getParams('com_einsatzkomponente');
 			
 			if ($notrufticker == '1')
 			{
-			echo '<td align="center" nowrap="nowrap"><a class="link" id="link" href="'.Route::_('index.php?option=com_einsatzkomponente').'&view=einsatzberichte&tickerID2='.$item->id.'"><img src="../administrator/media/com_einsatzkomponente/admin/images/send.png" width="32" height="32" /></a></td>';
+			echo '<td align="center" nowrap="nowrap"><a class="link" id="link" href="'.Route::_('index.php?option=com_einsatzkomponente').'&view=einsatzberichte&tickerID2='.$item->id.'"><img src="'.\Joomla\CMS\Uri\Uri::root(true).'/media/com_einsatzkomponente/admin/images/send.png" width="32" height="32" /></a></td>';
 			}
 			
 			
 			if ($notrufticker == '2')
 			{
-			echo '<td align="center" nowrap="nowrap"><img src="../administrator/media/com_einsatzkomponente/admin/images/ok.png" width="24" height="24" /></td>';
+			echo '<td align="center" nowrap="nowrap"><img src="'.\Joomla\CMS\Uri\Uri::root(true).'/media/com_einsatzkomponente/admin/images/ok.png" width="24" height="24" /></td>';
 			}
             
             if ($notrufticker == '0')
             {
-			echo '<td align="center" nowrap="nowrap"><img src="../administrator/media/com_einsatzkomponente/admin/images/error.png" width="24" height="24" /></td>';
+			echo '<td align="center" nowrap="nowrap"><img src="'.\Joomla\CMS\Uri\Uri::root(true).'/media/com_einsatzkomponente/admin/images/error.png" width="24" height="24" /></td>';
 			}
 			endif;
 // ----------------  info112.net  ENDE ----------------------------------------

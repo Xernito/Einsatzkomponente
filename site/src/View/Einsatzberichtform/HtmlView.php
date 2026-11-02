@@ -47,8 +47,8 @@ class HtmlView extends BaseHtmlView {
 		if ($this->params->get('display_home_bootstrap','0') == '1') :
 		endif;
 		if ($this->params->get('display_home_bootstrap','0') == '2') :
-		$document->addStyleSheet('media/com_einsatzkomponente/css/bootstrap/bootstrap.min.css');
-		$document->addStyleSheet('media/com_einsatzkomponente/css/bootstrap/bootstrap-responsive.min.css');
+		$document->addStyleSheet(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/css/bootstrap/bootstrap.min.css');
+		$document->addStyleSheet(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/css/bootstrap/bootstrap-responsive.min.css');
 		endif;
 
 		$document->getWebAssetManager()->useStyle('com_einsatzkomponente.einsatzkomponente');

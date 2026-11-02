@@ -41,7 +41,7 @@ if ($params->get('eiko')) :
 	
 // Import CSS
 $document = Factory::getApplication()->getDocument();
-$document->addStyleSheet('media/com_einsatzkomponente/css/edit.css');
+$document->addStyleSheet(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/css/edit.css');
  
 
 ?>

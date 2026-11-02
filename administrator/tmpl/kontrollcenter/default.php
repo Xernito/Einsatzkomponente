@@ -53,47 +53,47 @@ if (!empty($this->extra_sidebar)) {
         
 			  <div class="btn-group btn-group-justified">
 	    					<a class="btn" href="index.php?option=com_einsatzkomponente&view=einsatzberichte">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZBERICHTE'); ?>" src="media/com_einsatzkomponente/admin/images/menu/liste.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZBERICHTE'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/liste.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZBERICHTE'); ?></span>
 	    					</a>
 							
 	    					<a class="btn" href="index.php?option=com_einsatzkomponente&view=kategorien">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_KATEGORIEN'); ?>" src="media/com_einsatzkomponente/admin/images/menu/einsatzarten.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_KATEGORIEN'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/einsatzarten.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_KATEGORIEN'); ?></span>
 	    					</a>   						
 						
 	    					<a class="btn" href="index.php?option=com_einsatzkomponente&view=einsatzarten">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZARTEN'); ?>" src="media/com_einsatzkomponente/admin/images/menu/einsatzarten.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZARTEN'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/einsatzarten.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZARTEN'); ?></span>
 	    					</a>    						
 						
 	    					<a class="btn" href="index.php?option=com_einsatzkomponente&view=organisationen">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_ORGANISATIONEN'); ?>" src="media/com_einsatzkomponente/admin/images/menu/organisationen.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_ORGANISATIONEN'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/organisationen.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_ORGANISATIONEN'); ?></span>
 	    					</a>    						
 						
 	    					<a class="btn" href="index.php?option=com_einsatzkomponente&view=alarmierungsarten">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_ALARMIERUNGSARTEN'); ?>" src="media/com_einsatzkomponente/admin/images/menu/alarmierungsarten.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_ALARMIERUNGSARTEN'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/alarmierungsarten.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_ALARMIERUNGSARTEN'); ?></span>
 	    					</a>    						
 						
 	    					<a class="btn" href="index.php?option=com_einsatzkomponente&view=einsatzfahrzeuge">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZFAHRZEUGE'); ?>" src="media/com_einsatzkomponente/admin/images/menu/einsatzfahrzeuge.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZFAHRZEUGE'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/einsatzfahrzeuge.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZFAHRZEUGE'); ?></span>
 	    					</a>
     						
 	    					<!--<a class="btn" href="index.php?option=com_einsatzkomponente&view=beispiel">
-		    				<img  style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_BEISPIEL'); ?>" src="media/com_einsatzkomponente/admin/images/menu/beispiel.png" /><br/>
+		    				<img  style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_BEISPIEL'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/beispiel.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_BEISPIEL'); ?></span>
 	    					</a>-->
     					
 	    					<a class="btn" href="index.php?option=com_einsatzkomponente&view=einsatzbildmanager">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZBILDMANAGER'); ?>" src="media/com_einsatzkomponente/admin/images/menu/einsatzbildmanager.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZBILDMANAGER'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/einsatzbildmanager.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_TITLE_EINSATZBILDMANAGER'); ?></span>
 	    					</a>
 
 	    					<a class="btn" href="index.php?option=com_config&view=component&component=com_einsatzkomponente">
-		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_OPTIONS'); ?>" src="media/com_einsatzkomponente/admin/images/menu/einstellungen.png" /><br/>
+		    				<img style="width:32px;height:32px;" alt="<?php echo Text::_('COM_EINSATZKOMPONENTE_OPTIONS'); ?>" src="<?php echo \Joomla\CMS\Uri\Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/menu/einstellungen.png" /><br/>
 		    				<span style="font-size:11px;"><?php echo Text::_('COM_EINSATZKOMPONENTE_OPTIONS'); ?></span>
 	    					</a>
 
@@ -113,7 +113,7 @@ if (!empty($this->extra_sidebar)) {
 
 <div class="col-md-4">
 <div class="alert alert-info" style=" float:left;">
-<a target="_blank" href="https://www.einsatzkomponente.de/index.php"><img src="<?php echo Uri::base(); ?>media/com_einsatzkomponente/admin/images/komponentenbanner.jpg" style="float:left; margin-right:20px; padding-right:20px;"/></a>
+<a target="_blank" href="https://www.einsatzkomponente.de/index.php"><img src="<?php echo Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/komponentenbanner.jpg" style="float:left; margin-right:20px; padding-right:20px;"/></a>
 <span class="label label-important" style="padding: 5px 5px 5px 5px;font-size:larger;"><?php echo Text::_('COM_EINSATZKOMPONENTE_KONTROLLCENTER_PAYPAL_1');?></span><br/><br/> 
 <span class="label label-important" style="padding: 5px 5px 5px 5px;font-size:larger;"><?php echo 'Bzw. Werde Premium-User';?></span><br/><br/>
 <?php echo Text::_('COM_EINSATZKOMPONENTE_KONTROLLCENTER_PAYPAL_2');?>

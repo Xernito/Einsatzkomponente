@@ -74,7 +74,7 @@ endif;
 		echo '<h2>'.Text::_('Installations- und Updatemanager für die Einsatzkomponente Version ').$params['version'].'</h2>'; 
 		
 		?>
-		<a target="_blank" href="http://www.einsatzkomponente.de/index.php"><img border=0  src="<?php echo Uri::base(); ?>media/com_einsatzkomponente/admin/images/komponentenbanner.jpg"/></a><br/><br/>
+		<a target="_blank" href="http://www.einsatzkomponente.de/index.php"><img border=0  src="<?php echo Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/komponentenbanner.jpg"/></a><br/><br/>
         <?php
 
 //if ($bug) : echo 'Backup-Fehler: Installation abgebrochen !! Wenden Sie sich an: support@einsatzkomponente.de';exit; endif;

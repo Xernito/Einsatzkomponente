@@ -54,15 +54,15 @@ class HtmlView extends BaseHtmlView {
 		$document = Factory::getApplication()->getDocument();
         // Import CSS
 		$document->getWebAssetManager()->useStyle('com_einsatzkomponente.einsatzkomponente');
-		$document->addStyleSheet('media/com_einsatzkomponente/css/responsive.css');
+		$document->addStyleSheet(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/css/responsive.css');
 
 		// Bootstrap laden
 		
 		if ($this->params->get('display_home_bootstrap','0') == '1') :
 		endif;
 		if ($this->params->get('display_home_bootstrap','0') == '2') :
-		$document->addStyleSheet('media/com_einsatzkomponente/css/bootstrap/bootstrap.min.css');
-		$document->addStyleSheet('media/com_einsatzkomponente/css/bootstrap/bootstrap-responsive.min.css');
+		$document->addStyleSheet(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/css/bootstrap/bootstrap.min.css');
+		$document->addStyleSheet(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/css/bootstrap/bootstrap-responsive.min.css');
 		endif;
 		
 		// Import CSS aus Optionen

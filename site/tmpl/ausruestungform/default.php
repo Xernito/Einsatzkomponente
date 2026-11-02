@@ -19,7 +19,7 @@ use Joomla\CMS\Uri\Uri;
 $lang = Factory::getApplication()->getLanguage();
 $lang->load('com_einsatzkomponente', JPATH_ADMINISTRATOR);
 $doc = Factory::getApplication()->getDocument();
-$doc->addScript(Uri::base() . '/media/com_einsatzkomponente/js/form.js');
+$doc->addScript(Uri::root(true) . '/media/com_einsatzkomponente/js/form.js');
 
 // Import CSS
 $document = Factory::getApplication()->getDocument();

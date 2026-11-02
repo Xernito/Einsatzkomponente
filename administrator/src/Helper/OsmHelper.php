@@ -33,9 +33,9 @@ class OsmHelper
 		public static function installOsmMap()
 	{
 			$document = Factory::getApplication()->getDocument();
-			$document->addStyleSheet('media/com_einsatzkomponente/admin/leaflet/leaflet.css'); 
-			$document->addScript('media/com_einsatzkomponente/admin/leaflet/leaflet.js');
-			$document->addScript('media/com_einsatzkomponente/admin/leaflet/geocode.js');
+			$document->addStyleSheet(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/admin/leaflet/leaflet.css'); 
+			$document->addScript(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/admin/leaflet/leaflet.js');
+			$document->addScript(\Joomla\CMS\Uri\Uri::root(true) . '/media/com_einsatzkomponente/admin/leaflet/geocode.js');
 			return;
 	}
 
@@ -143,7 +143,7 @@ var LeafIcon = L.Icon.extend({
 //*********************************************************************
 // Icons zuweisen
 
-var blueIcon   = new LeafIcon({iconUrl:'<?php echo Uri::base();?>/media/com_einsatzkomponente/admin/leaflet/pin48blue.png'});
+var blueIcon   = new LeafIcon({iconUrl:'<?php echo Uri::root(true);?>/media/com_einsatzkomponente/admin/leaflet/pin48blue.png'});
 		
 		
 var marker2 = new L.marker([<?php echo $lat.','.$lon;?>],{draggable:'true',icon: blueIcon}).bindPopup().addTo(map);
@@ -187,7 +187,7 @@ marker2.on("drag", function(e) {
 			for (var i = 0; i < geodaten.length; i++) {
 				
 				var current = geodaten[i];
-				var Icon   = new LeafIcon({iconUrl:"<?php echo Uri::base();?>"+current.icon});
+				var Icon   = new LeafIcon({iconUrl:"<?php echo Uri::root();?>"+current.icon});
 				var text = "<h2 class='eiko_h2_osm'>"+current.name+"</h2><a class='btn-home' href=<?php echo Route::_('index.php?option=com_einsatzkomponente&view=einsatzbericht&id=' ); ?>"+current.id+"><?php echo Text::_('COM_EINSATZKOMPONENTE_DETAILS');?></a>"
 
 				L.marker(new L.LatLng([current.lat], [current.lon]),{icon : Icon},{title : current.name}).addTo(map)
@@ -233,7 +233,7 @@ marker2.on("drag", function(e) {
 
 
 				
-				var Icon   = new LeafIcon({iconUrl:"<?php echo Uri::base();?>"+icon});
+				var Icon   = new LeafIcon({iconUrl:"<?php echo Uri::root();?>"+icon});
 				
 				if (name && popup) {
 				var text = "<h2 class='eiko_h2_osm'>"+name+"</h2>"
@@ -276,7 +276,7 @@ marker2.on("drag", function(e) {
 			for (var i = 0; i < geodaten.length; i++) {
 				
 				var current = geodaten[i];
-				var Icon   = new LeafIcon({iconUrl:"<?php echo Uri::base();?>"+current.icon});
+				var Icon   = new LeafIcon({iconUrl:"<?php echo Uri::root();?>"+current.icon});
 				var text = "<h2 class='eiko_h2_osm'>"+current.name+"</h2>"
 				L.marker(new L.LatLng([current.lat], [current.lon]),{icon : Icon},{title : current.name})
 				.bindPopup(text)

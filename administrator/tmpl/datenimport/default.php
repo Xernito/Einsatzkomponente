@@ -33,7 +33,7 @@ $bug='0';
 		echo '<h2>Datenimport früherer Versionen</h2>'; 
 		
 		?>
-		<a target="_blank" href="https://www.einsatzkomponente.de/index.php"><img border=0  src="<?php echo Uri::base(); ?>media/com_einsatzkomponente/admin/images/komponentenbanner.jpg"/></a><br/><br/>
+		<a target="_blank" href="https://www.einsatzkomponente.de/index.php"><img border=0  src="<?php echo Uri::root(true); ?>/media/com_einsatzkomponente/admin/images/komponentenbanner.jpg"/></a><br/><br/>
         <?php
 // -------------------------------------------------------------------------------------------------------
 //$db = Factory::getContainer()->get(DatabaseInterface::class);
