@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="JSEARCH_FILTER"
+			hint="JSEARCH_FILTER"
+		/>
+		<field
+			name="state"
+			type="status"
+			label="JOPTION_SELECT_PUBLISHED"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+		</field>
+		<field type="sql" query="SELECT 0 AS id, '- alle Einsatzkategorien -' AS val UNION SELECT id, title AS val FROM #__eiko_tickerkat order by val" key_field="id" value_field="val" name="tickerkat" label="- alle Einsatzkategorien -" onchange="this.form.submit();" />
+		<field type="sql" query="SELECT 0 AS id, '- alle Einsatzarten -' AS val UNION SELECT id, title AS val FROM #__eiko_einsatzarten order by val" key_field="id" value_field="val" name="data1" label="- alle Einsatzarten -" onchange="this.form.submit();" />
+		<field type="sql" query="SELECT 0 AS id, '- alle Alarmierungsarten -' AS val UNION SELECT id, title AS val FROM #__eiko_alarmierungsarten order by val" key_field="id" value_field="val" name="alerting" label="- alle Alarmierungsarten -" onchange="this.form.submit();" />
+		<field type="sql" query="SELECT 0 AS id, '- alle Organisationen -' AS val UNION SELECT id, name AS val FROM #__eiko_organisationen order by val" key_field="id" value_field="val" name="auswahl_orga" label="- alle Organisationen -" onchange="this.form.submit();" />
+	</fields>
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			default="a.id DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.id ASC">JGRID_HEADING_ID</option>
+			<option value="a.id DESC">JGRID_HEADING_ID</option>
+			<option value="a.ordering ASC">JGRID_HEADING_ORDERING</option>
+			<option value="a.alerting ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_ALERTING</option>
+			<option value="a.alerting DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_ALERTING</option>
+			<option value="a.tickerkat ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_TICKERKAT</option>
+			<option value="a.tickerkat DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_TICKERKAT</option>
+			<option value="a.data1 ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_DATA1</option>
+			<option value="a.data1 DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_DATA1</option>
+			<option value="a.date1 ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_DATE1</option>
+			<option value="a.date1 DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_DATE1</option>
+			<option value="a.summary ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_SUMMARY</option>
+			<option value="a.summary DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_SUMMARY</option>
+			<option value="a.auswahl_orga ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_auswahl_orga</option>
+			<option value="a.auswahl_orga DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_auswahl_orga</option>
+			<option value="a.gmap ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_GMAP</option>
+			<option value="a.gmap DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_GMAP</option>
+			<option value="a.status_fb ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_STATUS_FB</option>
+			<option value="a.status_fb DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_STATUS_FB</option>
+			<option value="a.updatedate ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_UPDATEDATE</option>
+			<option value="a.updatedate DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_UPDATEDATE</option>
+			<option value="a.createdate ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_CREATEDATE</option>
+			<option value="a.createdate DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_CREATEDATE</option>
+			<option value="a.status ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_STATUS</option>
+			<option value="a.status DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_STATUS</option>
+			<option value="a.counter ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_COUNTER</option>
+			<option value="a.counter DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_COUNTER</option>
+			<option value="a.state ASC">JSTATUS</option>
+			<option value="a.state DESC">JSTATUS</option>
+			<option value="a.created_by ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_CREATED_BY</option>
+			<option value="a.created_by DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_CREATED_BY</option>
+			<option value="a.modified_by ASC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_MODIFIED_BY</option>
+			<option value="a.modified_by DESC">COM_EINSATZKOMPONENTE_EINSATZBERICHTE_MODIFIED_BY</option>
+		</field>
+		<field
+			name="limit"
+			type="limitbox"
+			class="input-mini"
+			default="25"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

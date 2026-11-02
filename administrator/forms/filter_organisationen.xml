@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			inputmode="search"
+			label="JSEARCH_FILTER"
+			hint="JSEARCH_FILTER"
+		/>
+		<field
+			name="state"
+			type="status"
+			label="JOPTION_SELECT_PUBLISHED"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+		</field>
+	</fields>
+	<fields name="list">
+		<field
+			name="fullordering"
+			type="list"
+			label="JGLOBAL_SORT_BY"
+			default="a.id DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JGLOBAL_SORT_BY</option>
+			<option value="a.id ASC">JGRID_HEADING_ID</option>
+			<option value="a.id DESC">JGRID_HEADING_ID</option>
+			<option value="a.ordering ASC">JGRID_HEADING_ORDERING</option>
+			<option value="a.name ASC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_NAME</option>
+			<option value="a.name DESC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_NAME</option>
+			<option value="a.detail1 ASC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_DETAIL1</option>
+			<option value="a.detail1 DESC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_DETAIL1</option>
+			<option value="a.link ASC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_LINK</option>
+			<option value="a.link DESC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_LINK</option>
+			<option value="a.gmap_latitude ASC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_GMAP_LATITUDE</option>
+			<option value="a.gmap_latitude DESC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_GMAP_LATITUDE</option>
+			<option value="a.gmap_longitude ASC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_GMAP_LONGITUDE</option>
+			<option value="a.gmap_longitude DESC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_GMAP_LONGITUDE</option>
+			<option value="a.ffw ASC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_FFW</option>
+			<option value="a.ffw DESC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_FFW</option>
+			<option value="a.state ASC">JSTATUS</option>
+			<option value="a.state DESC">JSTATUS</option>
+			<option value="a.created_by ASC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_CREATED_BY</option>
+			<option value="a.created_by DESC">COM_EINSATZKOMPONENTE_ORGANISATIONEN_CREATED_BY</option>
+		</field>
+		<field
+			name="limit"
+			type="limitbox"
+			class="input-mini"
+			default="25"
+			onchange="this.form.submit();"
+		/>
+	</fields>
+</form>

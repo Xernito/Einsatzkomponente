@@ -1,0 +1,91 @@
+{
+    "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+    "name": "com_einsatzkomponente",
+    "version": "5.0.0",
+    "description": "Einsatzkomponente assets",
+    "license": "GPL-2.0-or-later",
+    "assets": [
+        {
+            "name": "com_einsatzkomponente.einsatzkomponente",
+            "type": "style",
+            "uri": "com_einsatzkomponente/css/einsatzkomponente.css"
+        },
+        {
+            "name": "com_einsatzkomponente.admin",
+            "type": "style",
+            "uri": "com_einsatzkomponente/admin/css/einsatzkomponente.css"
+        },
+        {
+            "name": "com_einsatzkomponente.form",
+            "type": "style",
+            "uri": "com_einsatzkomponente/css/form.css"
+        },
+        {
+            "name": "com_einsatzkomponente.list",
+            "type": "style",
+            "uri": "com_einsatzkomponente/css/list.css"
+        },
+        {
+            "name": "com_einsatzkomponente.item",
+            "type": "style",
+            "uri": "com_einsatzkomponente/css/item.css"
+        },
+        {
+            "name": "com_einsatzkomponente.edit",
+            "type": "style",
+            "uri": "com_einsatzkomponente/css/edit.css"
+        },
+        {
+            "name": "com_einsatzkomponente.responsive",
+            "type": "style",
+            "uri": "com_einsatzkomponente/css/responsive.css"
+        },
+        {
+            "name": "com_einsatzkomponente.form",
+            "type": "script",
+            "uri": "com_einsatzkomponente/js/form.js",
+            "dependencies": [
+                "jquery"
+            ],
+            "attributes": {
+                "defer": true
+            }
+        },
+        {
+            "name": "com_einsatzkomponente.highslide",
+            "type": "script",
+            "uri": "com_einsatzkomponente/highslide/highslide-with-gallery.js"
+        },
+        {
+            "name": "com_einsatzkomponente.highslide.config",
+            "type": "script",
+            "uri": "com_einsatzkomponente/highslide/highslide.config.js",
+            "dependencies": [
+                "com_einsatzkomponente.highslide"
+            ]
+        },
+        {
+            "name": "com_einsatzkomponente.highslide",
+            "type": "style",
+            "uri": "com_einsatzkomponente/highslide/highslide.css"
+        },
+        {
+            "name": "com_einsatzkomponente.leaflet",
+            "type": "style",
+            "uri": "com_einsatzkomponente/leaflet/leaflet.css"
+        },
+        {
+            "name": "com_einsatzkomponente.leaflet",
+            "type": "script",
+            "uri": "com_einsatzkomponente/leaflet/leaflet.js"
+        },
+        {
+            "name": "com_einsatzkomponente.leaflet.geocode",
+            "type": "script",
+            "uri": "com_einsatzkomponente/leaflet/geocode.js",
+            "dependencies": [
+                "com_einsatzkomponente.leaflet"
+            ]
+        }
+    ]
+}

@@ -2226,7 +2226,7 @@
 	
 	
 	<fieldset name="information" label="COM_EINSATZKOMPONENTE_OPTION_INFO"
-		addfieldpath="/administrator/components/com_einsatzkomponente/models/fields"
+		addfieldprefix="Einsatzkomponente\Component\Einsatzkomponente\Administrator\Field"
 	>
 		<field 
 			name="infobox"

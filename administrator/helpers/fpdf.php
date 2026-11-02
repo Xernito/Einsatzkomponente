@@ -109,7 +109,7 @@ function resizeImage($img, $x, $y) {
 	$this->Image($img, $x, $y, $width, $height);
 }
 
-function FPDF($orientation='P', $unit='mm', $size='A4')
+function __construct($orientation='P', $unit='mm', $size='A4')
 {
 	// Some checks
 	$this->_dochecks();

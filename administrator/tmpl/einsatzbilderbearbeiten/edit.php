@@ -1,0 +1,76 @@
+<?php
+/**
+ * @version     3.15.0
+ * @package     com_einsatzkomponente
+ * @copyright   Copyright (C) 2017 by Ralf Meyer. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @author      Ralf Meyer <ralf.meyer@mail.de> - https://einsatzkomponente.de
+ */
+// no direct access
+defined('_JEXEC') or die;
+
+use Joomla\CMS\Factory;
+
+use Joomla\CMS\HTML\HTMLHelper;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+
+/** @var \Einsatzkomponente\Component\Einsatzkomponente\Administrator\View\Name\HtmlView $this */
+
+$wa = $this->getDocument()->getWebAssetManager();
+$wa->useScript('keepalive')
+    ->useScript('form.validate')
+    ->useStyle('com_einsatzkomponente.admin');
+?>
+<script type="text/javascript">
+	Joomla.submitbutton = function(task)
+	{
+		if (task == 'einsatzbilderbearbeiten.cancel' || document.formvalidator.isValid(document.getElementById('einsatzbilderbearbeiten-form'))) {
+			Joomla.submitform(task, document.getElementById('einsatzbilderbearbeiten-form'));
+		}
+		else {
+			alert('<?php echo $this->escape(Text::_('JGLOBAL_VALIDATION_FORM_FAILED'));?>');
+		}
+	}
+</script>
+<form action="<?php echo Route::_('index.php?option=com_einsatzkomponente&layout=edit&id='.(int) $this->item->id); ?>" method="post" enctype="multipart/form-data" name="adminForm" id="einsatzbilderbearbeiten-form" class="form-validate">
+	<div class="row">
+		<div class="col-md-10 form-horizontal">
+            <fieldset class="adminform">
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('id'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('id'); ?></div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('report_id'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('report_id'); ?></div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('image'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('image'); ?></div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('thumb'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('thumb'); ?></div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('comment'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('comment'); ?></div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('state'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('state'); ?></div>
+			</div>
+			<div class="control-group">
+				<div class="control-label"><?php echo $this->form->getLabel('created_by'); ?></div>
+				<div class="controls"><?php echo $this->form->getInput('created_by'); ?></div>
+			</div>
+				
+            </fieldset>
+    	</div>
+        
+        <input type="hidden" name="task" value="" />
+        <?php echo HTMLHelper::_('form.token'); ?>
+        
+    </div>
+</form>

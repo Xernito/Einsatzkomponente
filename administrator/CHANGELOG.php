@@ -11,6 +11,14 @@
 <?php defined('_JEXEC') or die(); ?>
 <h1>Einsatzkomponente für das Joomla-CMS</h1>
 
+<h3>Changelog <small>Version 5.0.0</small></h3>
+<ul>
++ Portierung auf Joomla 6 (PHP 8.3, Namespaces, Service-Provider)
++ Backend-Listen mit Search-Tools und Drag&amp;Drop-Sortierung, Bootstrap 5
+# Datenbank: utf8mb4, NULL statt 0000-00-00-Datumswerten, Standardwerte fuer strict mode
+# Update-Server der Joomla-3-Version entfernt
+</ul>
+
 <h3>Changelog <small>Version 3.50</small></h3>
 <ul>
 # Filtersortierung im Front-und Backend nach Reihenfolge bzw. Namen

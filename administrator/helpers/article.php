@@ -9,35 +9,45 @@
 // No direct access
 defined('_JEXEC') or die;
 
-		if (!$cid) : $cid = JFactory::getApplication()->input->get('cid', array(), 'array'); endif;
+use Einsatzkomponente\Component\Einsatzkomponente\Administrator\Helper\EinsatzkomponenteHelper;
+use Joomla\CMS\Component\ComponentHelper;
+use Joomla\CMS\Factory;
+use Joomla\CMS\Filter\OutputFilter;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\Table\Table;
+use Joomla\CMS\Uri\Uri;
+use Joomla\Database\DatabaseInterface;
+use Joomla\Utilities\ArrayHelper;
+
+		if (!$cid) : $cid = Factory::getApplication()->getInput()->get('cid', array(), 'array'); endif;
 
 		if (!is_array($cid) || count($cid) < 1)
 		{
-			JFactory::getApplication()->enqueueMessage(JText::_($this->text_prefix . '_NO_ITEM_SELECTED'), 'error');
+			Factory::getApplication()->enqueueMessage(Text::_($this->text_prefix . '_NO_ITEM_SELECTED'), 'error');
 		}
 		else
 		{
 		//$model = $this->getModel();
-		$params = JComponentHelper::getParams('com_einsatzkomponente');
+		$params = ComponentHelper::getParams('com_einsatzkomponente');
 			// Make sure the item ids are integers
-			jimport('joomla.utilities.arrayhelper');
-			JArrayHelper::toInteger($cid);
+			$cid = ArrayHelper::toInteger($cid);
 			
 		foreach ($cid as $key => $val) {
 			
 		$query = 'SELECT * FROM #__eiko_einsatzberichte WHERE id = "'.$val.'" and state ="1" LIMIT 1';
-		$db = JFactory::getDBO();
+		$db = Factory::getContainer()->get(DatabaseInterface::class);
 		$db->setQuery($query);
 		$result = $db->loadObjectList();
 
 		//$kat	= EinsatzkomponenteHelper::getTickerKat ($result[0]->tickerkat); 
 		
-		$db = JFactory::getDbo();
+		$db = Factory::getContainer()->get(DatabaseInterface::class);
 		$db->setQuery('SELECT MAX(asset_id) FROM #__content');
 		$max = $db->loadResult();
 		$asset_id = $max+1;
 
-		$link = JRoute::_( JURI::root() . 'index.php?option=com_einsatzkomponente&view=einsatzbericht&id='.$result[0]->id).'&Itemid='.$params->get('homelink','');
+		$link = Route::_( Uri::root() . 'index.php?option=com_einsatzkomponente&view=einsatzbericht&id='.$result[0]->id).'&Itemid='.$params->get('homelink','');
 		
 		$image_intro = str_replace('/', '/', $result[0]->image);
 		$image_intro = $db->escape($image_intro);
@@ -45,7 +55,7 @@ defined('_JEXEC') or die;
 		$image_fulltext = str_replace('/thumbs', '', $image_intro);
 		endif;
 		
-		$user = JFactory::getUser(); 
+		$user = Factory::getApplication()->getIdentity(); 
 			
 		$alias = '';
 		$intro = '';
@@ -68,13 +78,13 @@ defined('_JEXEC') or die;
 $data = array();
 $data['id']             = $result[0]->article_id;
 $data['title'] 			= $result[0]->summary;
-$data['alias'] 			= JFilterOutput::stringURLSafe($alias);
+$data['alias'] 			= OutputFilter::stringURLSafe($alias);
 $data['introtext'] 		= $intro;
 
 		if ($params->get('article_orgas','1')) :	
 					$org = array();
 					foreach(explode(',',$result[0]->auswahl_orga) as $value):
-						$db = JFactory::getDbo();
+						$db = Factory::getContainer()->get(DatabaseInterface::class);
 						$sql	= $db->getQuery(true);
 						$sql
 							->select('name')
@@ -113,13 +123,13 @@ $data['language'] 		= '*';
 
    
 // Lets store it!    
-$row                        =            JTable::getInstance('Content', 'JTable');
+$row                        =            Table::getInstance('Content', 'JTable');
 $row->bind($data);
 $row->check();
 			// Store the row.
 			if (!$row->store())
 			{
-			JFactory::getApplication()->enqueueMessage(JText::_($this->text_prefix . ' '), 'error');
+			Factory::getApplication()->enqueueMessage(Text::_($this->text_prefix . ' '), 'error');
 				return false;
 			}
 //print_r ($row);exit;
@@ -130,9 +140,9 @@ $row->check();
 						 if ($params->get('article_frontpage','1')) :	
 						//Artikel als Haupteintrag-Eintrag markieren 
 						 $frontpage_query = "INSERT INTO #__content_frontpage SET content_id='".$newId."'";
-						 $db = JFactory::getDBO();
+						 $db = Factory::getContainer()->get(DatabaseInterface::class);
 						 $db->setQuery($frontpage_query);
-						 $db->query();
+						 $db->execute();
 						 endif;
 			}
 			else {
@@ -142,9 +152,9 @@ $row->check();
 			
 		// Joomla-Artikel Id in Einsatzbericht eintragen 
 		$query = "UPDATE #__eiko_einsatzberichte SET article_id = '".$newId."' WHERE id = '".$result[0]->id."'";
-		$db = JFactory::getDBO();
+		$db = Factory::getContainer()->get(DatabaseInterface::class);
 		$db->setQuery($query);
-		$db->query();
+		$db->execute();
 		
 				
 				}
